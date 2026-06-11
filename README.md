@@ -1,57 +1,86 @@
 # Linux Enterprise Checklist
 
-Practical checklist for reviewing Linux servers in enterprise environments.
+Checklist práctico para la revisión de servidores Linux en entornos empresariales.
 
-The goal is not to replace monitoring platforms or operational procedures, but to provide a quick and structured review when troubleshooting systems, validating environments or performing health checks.
+El objetivo de este repositorio no es sustituir herramientas de monitorización ni procedimientos operativos existentes, sino proporcionar una guía rápida y estructurada para validar el estado general de un sistema Linux.
 
-## Related Documentation
+Puede utilizarse durante:
 
-Additional Linux administration, troubleshooting, hardening and infrastructure documentation:
+- Revisiones de salud de servidores
+- Validaciones de nuevas instalaciones
+- Auditorías internas
+- Troubleshooting
+- Hardening
+- Comprobaciones previas a cambios
+- Revisiones operativas periódicas
 
-https://desdeelservidor.es
+---
 
-Technical articles and guides:
+## Áreas revisadas
 
-https://desdeelservidor.es/guias.html
-
-
-## Areas Covered
-
-- System status
+- Sistema operativo
 - CPU
-- Memory
-- Storage
-- Network
-- Services
-- Logs
-- Security
+- Memoria
+- Disco
+- Red
+- Servicios
+- Usuarios y permisos
+- Seguridad básica
 - Backups
-- Monitoring
+- Monitorización
+- Logs
 
-## Repository Structure
+---
 
-docs/checklist.md
-scripts/linux-health-check.sh
+## Estructura
 
-## Typical Use Cases
+- docs/checklist.md
 
-- Incident response
-- Server reviews
-- Health checks
-- New environment validation
-- Operational audits
+---
 
-## Technologies
+## Tecnologías
 
 - Linux
-- Bash
-- Systemd
-- Networking
-- Monitoring
+- SUSE Linux Enterprise
+- Red Hat Enterprise Linux
+- Ubuntu Server
+- VMware
+- Kubernetes
+- Docker
+- Podman
 
-Author:
-Jose Gonzalez
+---
 
-Website:
+## Recursos relacionados
+
+### Web
+
 https://desdeelservidor.es
 
+### Guía de revisión Linux
+
+https://desdeelservidor.es/entradas/revisar-servidor-linux-cuando-falla.html
+
+### Linux Secure Baseline
+
+https://desdeelservidor.es/guias/linux-secure-baseline-hardening.html
+
+### Biblioteca técnica
+
+https://desdeelservidor.es/biblioteca-linux-devops.html
+
+### Formación
+
+https://desdeelservidor.es/formacion.html
+
+### Autor
+
+https://desdeelservidor.es/autor-jose-gonzalez.html
+
+---
+
+## Aviso
+
+La información incluida tiene carácter educativo y sirve como guía práctica de revisión.
+
+Cada organización debe adaptar los controles a sus procedimientos, requisitos de seguridad y normativa aplicable.
