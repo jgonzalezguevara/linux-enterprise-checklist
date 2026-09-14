@@ -1,86 +1,116 @@
 # Linux Enterprise Checklist
 
-Checklist práctico para la revisión de servidores Linux en entornos empresariales.
+Operational Linux review checklist with a lightweight health-check script for infrastructure validation and troubleshooting.
 
-El objetivo de este repositorio no es sustituir herramientas de monitorización ni procedimientos operativos existentes, sino proporcionar una guía rápida y estructurada para validar el estado general de un sistema Linux.
+The project provides a repeatable starting point for reviewing Linux systems without replacing monitoring platforms, configuration management or organization-specific operating procedures.
 
-Puede utilizarse durante:
+## Use cases
 
-- Revisiones de salud de servidores
-- Validaciones de nuevas instalaciones
-- Auditorías internas
+- Server health reviews
+- New-system validation
+- Operational audits
 - Troubleshooting
-- Hardening
-- Comprobaciones previas a cambios
-- Revisiones operativas periódicas
+- Pre-change reviews
+- Periodic infrastructure checks
+- Baseline verification
 
----
+## Review areas
 
-## Áreas revisadas
+The checklist covers:
 
-- Sistema operativo
-- CPU
-- Memoria
-- Disco
-- Red
-- Servicios
-- Usuarios y permisos
-- Seguridad básica
-- Backups
-- Monitorización
+- System identity and uptime
+- CPU and load
+- Memory
+- Storage
+- Network
+- Services
 - Logs
+- Accounts and access
+- Security
+- Monitoring
+- Backups
 
----
+## Repository structure
 
-## Estructura
+    docs/
+      checklist.md
 
-- docs/checklist.md
+    scripts/
+      linux-health-check.sh
 
----
+## Health-check script
 
-## Tecnologías
+Run:
 
-- Linux
+    ./scripts/linux-health-check.sh
+
+The script performs read-only operating-system checks and reports:
+
+- Host information
+- CPU information
+- Memory utilization
+- Filesystem usage
+- Network configuration
+- Failed systemd services
+- Recent system errors
+
+The default filesystem warning threshold is 90%.
+
+It can be changed with:
+
+    DISK_WARN_PERCENT=85 ./scripts/linux-health-check.sh
+
+The script returns:
+
+    0  no operational warnings detected
+    1  one or more warnings detected
+
+Unavailable optional commands are reported as skipped instead of terminating the complete review.
+
+## Manual checklist
+
+The detailed operational checklist is available at:
+
+    docs/checklist.md
+
+Some commands such as `mpstat` and `iostat` require the `sysstat` package.
+
+## Scope
+
+This repository is an operational review aid.
+
+It does not replace:
+
+- Monitoring
+- Security assessment
+- Configuration management
+- Backup verification
+- Incident procedures
+- Organization-specific compliance controls
+
+Results must be interpreted according to the role and expected configuration of each system.
+
+## Technologies
+
+Applicable to common Linux server environments including:
+
 - SUSE Linux Enterprise
 - Red Hat Enterprise Linux
 - Ubuntu Server
-- VMware
-- Kubernetes
-- Docker
-- Podman
+- Other systemd-based Linux distributions
 
----
+The checklist can also support hosts running virtualization, containers or Kubernetes workloads, but it remains focused on operating-system review.
 
-## Recursos relacionados
+## Related resources
 
-### Web
+Technical documentation:
 
-https://desdeelservidor.es
+    https://desdeelservidor.es
 
-### Guía de revisión Linux
+GitHub:
 
-https://desdeelservidor.es/entradas/revisar-servidor-linux-cuando-falla.html
+    https://github.com/jgonzalezguevara
 
-### Linux Secure Baseline
+## Author
 
-https://desdeelservidor.es/guias/linux-secure-baseline-hardening.html
-
-### Biblioteca técnica
-
-https://desdeelservidor.es/biblioteca-linux-devops.html
-
-### Formación
-
-https://desdeelservidor.es/formacion.html
-
-### Autor
-
-https://desdeelservidor.es/autor-jose-gonzalez.html
-
----
-
-## Aviso
-
-La información incluida tiene carácter educativo y sirve como guía práctica de revisión.
-
-Cada organización debe adaptar los controles a sus procedimientos, requisitos de seguridad y normativa aplicable.
+Jose González
